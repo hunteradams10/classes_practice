@@ -9,7 +9,7 @@ def best_vehicle(planned_terrain, distance, vehicles=Vehicle.vehicle_collection)
     fav_vehicles.sort_by! do |v|
         v.time_to_travel(distance)
     end
-
+    p fav_vehicles
     fav_vehicles.first
 end
 
@@ -24,14 +24,12 @@ end
 # Display
 
 victor = Bicycle.new(10, [:road, :dirt])
-daisy = Motorbike.new(20, [:road])
-pobo = Bicycle.new(10, [:road, :dirt])
-tuffle = Motorbike.new(20, [:road])
+daisy = Motorbike.new(50, [:road])
+# pobo = Bicycle.new(10, [:road, :dirt])
+# tuffle = Motorbike.new(20, [:road])
 
 victor.refuel(50)
 daisy.refuel(80)
-tuffle.refuel(100)
-pobo.refuel(20)
 
 p best_vehicle(:road, 50)
 
