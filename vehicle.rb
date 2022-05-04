@@ -46,4 +46,8 @@ end
     def has_sufficient_fuel?(distance)
         @fuel_kms >= distance 
     end
+
+    def time_to_travel(distance)
+        distance / @speed 
+    end
 end
