@@ -3,12 +3,11 @@ require_relative 'motorbike'
 
 def best_vehicle(planned_terrain, distance, vehicles=Vehicle.vehicle_collection) 
     vehicles.each do |v|
-        v.can_travel_on_terrain?(planned_terrain)
+        p v.can_travel_on_terrain?(planned_terrain) && v.has_sufficient_fuel?(distance)
     end
-
 end
 
-# p best_vehicle(:road, 50)
+
 
 # You would call the class variable by giving the Class, then its method
 # ie. Vehicles.vehicle_collection. Because we don't want to type this in for
@@ -19,7 +18,9 @@ end
 # Display
 
 victor = Bicycle.new(10, [:road, :dirt])
-daisy = Motorbike.new(20, [:dirt])
+daisy = Motorbike.new(20, [:true])
+
+p best_vehicle(:dirt, 50)
 
 # bob = Vehicle.new(20, [:road], 2, "brum")
 # bob.refuel(35)

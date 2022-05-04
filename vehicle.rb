@@ -41,4 +41,9 @@ end
     def can_travel_on_terrain?(terrain)
         @terrain.include?(terrain)
     end
+
+    # Does this instance of this vehicle have enough fuel to go the distance we need?
+    def has_sufficient_fuel?(distance)
+        @fuel_kms >= distance 
+    end
 end
